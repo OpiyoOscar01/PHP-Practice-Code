@@ -75,5 +75,6 @@ $number=120003.3222200;
 $formattedNum=number_format($number,3);
 echo $formattedNum;
 
+echo "Php is very easy."
 
 ?>
