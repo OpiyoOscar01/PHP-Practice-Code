@@ -46,6 +46,34 @@ foreach ($students as $key=>$value){
     echo "$key: $value" . '<br>';
 }
 
+   //Exploring the concepts of functions.
+
+     function totalAmount(...$amounts){
+    $initial=0;
+    foreach ($amounts as $amount){
+        $initial+=$amount;
+         }
+    return $initial;
+     }  ;
+$amounts=[23000,27000,2000];
+$transprt=[3000];
+   $sum=totalAmount(...$amounts,...$transprt);
+echo "Your total cart bill is Ugx $sum".'<br>';
+
+
+function compute(...$scores){
+    $sum = array_reduce($scores, function($carry, $item){
+        return $carry + $item;
+    }, 0);
+    return number_format($sum / count($scores),2);
+}
+
+$scores = [89, 78, 90, 88, 87, 85];
+$computedScore = compute(...$scores);
+echo "Your Average score is $computedScore %" . '<br>';
+$number=120003.3222200;
+$formattedNum=number_format($number,3);
+echo $formattedNum;
 
 
 ?>
